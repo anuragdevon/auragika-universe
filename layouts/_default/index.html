@@ -1,0 +1,474 @@
+{{ define "main" }}
+
+  <!-- ══ LOADER ══ -->
+  <div id="loader">
+    <div class="loader-logo">AU✦</div>
+    <div class="loader-bar"><div class="loader-bar-fill" id="loader-fill"></div></div>
+  </div>
+
+  <!-- ══ CURSOR ══ -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">AU✦</a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#travel">Travel</a></li>
+      <li><a href="#kitchen">Kitchen</a></li>
+      <li><a href="#productivity">Productivity</a></li>
+      <li><a href="#universe">Universe</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══ -->
+  <div id="mobile-menu" role="dialog" aria-modal="true">
+    <button id="menu-close" aria-label="Close menu">✕</button>
+    <a href="#home"         class="mobile-link">Home</a>
+    <a href="#travel"       class="mobile-link">Travel</a>
+    <a href="#kitchen"      class="mobile-link">Kitchen</a>
+    <a href="#productivity" class="mobile-link">Productivity</a>
+    <a href="#universe"     class="mobile-link">Universe</a>
+    <a href="#connect"      class="mobile-link">Connect</a>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="home">
+    <div class="hero-bg" aria-hidden="true"
+         style="background-image:url('./images/background1.webp')"></div>
+
+    <div class="hero-content">
+      <div class="hero-label" id="hero-label">✦ &nbsp; Ruchika &amp; Anurag's World &nbsp; ✦</div>
+
+      <h1 class="hero-title">
+        <span class="glitch" data-text="{{ .Site.Title }}">{{ .Site.Title }}</span>
+      </h1>
+
+      <p class="hero-subtitle" id="hero-sub">
+        Travel plans. Culinary adventures. Productivity systems.<br>
+        Two people. One universe.
+      </p>
+
+      <div class="hero-persons" id="hero-persons">
+        <div class="person-card glass-card" id="card-ruchika" data-tilt>
+          <div class="person-avatar" style="background:linear-gradient(135deg,#06b6d4,#8b5cf6)">
+            <img src="./images/nova.webp" alt="Ruchika" />
+          </div>
+          <div class="person-name">Ruchika</div>
+          <div class="person-role">Creator &amp; Advisor</div>
+        </div>
+        <div class="person-connector" aria-hidden="true">✦</div>
+        <div class="person-card glass-card" id="card-anurag" data-tilt>
+          <div class="person-avatar">
+            <img src="./images/devon.webp" alt="Anurag" />
+          </div>
+          <div class="person-name">Anurag</div>
+          <div class="person-role">Explorer &amp; Builder</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" id="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Explore</span>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT STRIP ══ -->
+  <div class="about-strip" id="about-strip">
+    <div class="about-strip-inner">
+      <span class="about-strip-label">What we're about</span>
+      <div class="about-tags">
+        <span class="atag">✈&nbsp; Travel</span>
+        <span class="atag">🍳&nbsp; Cooking</span>
+        <span class="atag">⚡&nbsp; Productivity</span>
+        <span class="atag">📖&nbsp; Routines</span>
+        <span class="atag">💰&nbsp; Finance</span>
+        <span class="atag">🌍&nbsp; Destinations</span>
+        <span class="atag">🎯&nbsp; Goals</span>
+        <span class="atag">🍜&nbsp; Recipes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TRAVEL  ·  card: image LEFT
+  ═══════════════════════════════════════════ -->
+  <section id="travel">
+    <div class="sec-card-outer">
+      <div class="sec-card">
+
+        <div class="sec-card-img">
+          <img src="./images/background2.webp" alt="Travel destinations">
+        </div>
+
+        <div class="sec-card-body">
+          <span class="sec-card-num" aria-hidden="true">01</span>
+          <span class="sec-card-label">01 / 05</span>
+          <span class="section-tag">✈ Travel</span>
+          <h2 class="section-title">Explore the World</h2>
+          <p class="section-sub">Hand-picked destinations, itineraries and travel tips curated from our own adventures around the globe.</p>
+          <a href="#travel-content" class="sec-card-btn">Explore</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-content" id="travel-content">
+      <div class="travel-grid">
+        <div class="travel-card glass-card">
+          <div class="travel-card-img"><span class="card-emoji">🏔️</span></div>
+          <div class="travel-card-body">
+            <div class="travel-card-category">Mountain Escape</div>
+            <div class="travel-card-title">Destination Name</div>
+            <div class="travel-card-desc">A short description of this amazing place and what makes it special for a trip.</div>
+          </div>
+        </div>
+        <div class="travel-card glass-card">
+          <div class="travel-card-img" style="background:linear-gradient(135deg,#0891b2,#0ea5e9)"><span class="card-emoji">🌊</span></div>
+          <div class="travel-card-body">
+            <div class="travel-card-category">Beach Getaway</div>
+            <div class="travel-card-title">Destination Name</div>
+            <div class="travel-card-desc">A short description of this coastal paradise and the best time to visit.</div>
+          </div>
+        </div>
+        <div class="travel-card glass-card">
+          <div class="travel-card-img" style="background:linear-gradient(135deg,#d97706,#f59e0b)"><span class="card-emoji">🏛️</span></div>
+          <div class="travel-card-body">
+            <div class="travel-card-category">Cultural Journey</div>
+            <div class="travel-card-title">Destination Name</div>
+            <div class="travel-card-desc">History, art and local flavors in one unforgettable cultural experience.</div>
+          </div>
+        </div>
+        <div class="travel-card glass-card">
+          <div class="travel-card-img" style="background:linear-gradient(135deg,#059669,#10b981)"><span class="card-emoji">🌿</span></div>
+          <div class="travel-card-body">
+            <div class="travel-card-category">Nature Retreat</div>
+            <div class="travel-card-title">Destination Name</div>
+            <div class="travel-card-desc">Disconnect from the world and reconnect with nature in this serene haven.</div>
+          </div>
+        </div>
+        <div class="travel-card glass-card">
+          <div class="travel-card-img" style="background:linear-gradient(135deg,#db2777,#ec4899)"><span class="card-emoji">🌆</span></div>
+          <div class="travel-card-body">
+            <div class="travel-card-category">City Break</div>
+            <div class="travel-card-title">Destination Name</div>
+            <div class="travel-card-desc">Vibrant city life, rooftop cafes and endless exploration awaits.</div>
+          </div>
+        </div>
+        <div class="travel-card glass-card">
+          <div class="travel-card-img" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)"><span class="card-emoji">🗺️</span></div>
+          <div class="travel-card-body">
+            <div class="travel-card-category">Off The Beaten Path</div>
+            <div class="travel-card-title">Hidden Gem</div>
+            <div class="travel-card-desc">A secret spot only the adventurous know about. Worth every bit of effort.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       KITCHEN  ·  card: image RIGHT
+  ═══════════════════════════════════════════ -->
+  <section id="kitchen">
+    <div class="sec-card-outer">
+      <div class="sec-card sec-card--img-right sec-card--tinted">
+
+        <div class="sec-card-img">
+          <img src="./images/background3.webp" alt="Culinary adventures">
+        </div>
+
+        <div class="sec-card-body">
+          <span class="sec-card-num" aria-hidden="true">02</span>
+          <span class="sec-card-label">02 / 05</span>
+          <span class="section-tag">🍳 Kitchen</span>
+          <h2 class="section-title">Culinary Adventures</h2>
+          <p class="section-sub">Recipes, meal plans and cooking tips we love — from quick weekday meals to slow weekend feasts.</p>
+          <a href="#kitchen-content" class="sec-card-btn">Discover</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-content" id="kitchen-content">
+      <div class="kitchen-grid">
+        <div class="kitchen-featured glass-card">
+          <div class="kitchen-featured-img">🍲</div>
+          <div class="kitchen-featured-body">
+            <div class="kitchen-featured-tag">⭐ Featured Recipe</div>
+            <div class="kitchen-featured-title">Our Favourite Dish</div>
+            <div class="kitchen-featured-desc">Replace this with your actual featured dish and a short description that makes people want to cook it right away.</div>
+          </div>
+        </div>
+        <div class="recipe-card glass-card">
+          <div class="recipe-icon">🥗</div>
+          <div class="recipe-info">
+            <h4>Recipe Name</h4>
+            <p>Short description — what it tastes like and why you love it.</p>
+            <div class="recipe-meta">
+              <span class="recipe-badge">🕐 30 min</span>
+              <span class="recipe-badge">Easy</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-card glass-card">
+          <div class="recipe-icon">🍜</div>
+          <div class="recipe-info">
+            <h4>Recipe Name</h4>
+            <p>Short description — what it tastes like and why you love it.</p>
+            <div class="recipe-meta">
+              <span class="recipe-badge">🕐 45 min</span>
+              <span class="recipe-badge">Medium</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-card glass-card">
+          <div class="recipe-icon">🧁</div>
+          <div class="recipe-info">
+            <h4>Recipe Name</h4>
+            <p>Short description — what it tastes like and why you love it.</p>
+            <div class="recipe-meta">
+              <span class="recipe-badge">🕐 1 hr</span>
+              <span class="recipe-badge">Weekend</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-card glass-card">
+          <div class="recipe-icon">🫖</div>
+          <div class="recipe-info">
+            <h4>Recipe Name</h4>
+            <p>Short description — what it tastes like and why you love it.</p>
+            <div class="recipe-meta">
+              <span class="recipe-badge">🕐 10 min</span>
+              <span class="recipe-badge">Quick</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       PRODUCTIVITY  ·  card: image LEFT
+  ═══════════════════════════════════════════ -->
+  <section id="productivity">
+    <div class="sec-card-outer">
+      <div class="sec-card">
+
+        <div class="sec-card-img">
+          <img src="./images/background4.webp" alt="Productivity tools">
+        </div>
+
+        <div class="sec-card-body">
+          <span class="sec-card-num" aria-hidden="true">03</span>
+          <span class="sec-card-label">03 / 05</span>
+          <span class="section-tag">⚡ Productivity</span>
+          <h2 class="section-title">Tools &amp; Systems</h2>
+          <p class="section-sub">Apps and systems we've built to make life more intentional — from finances to daily routines.</p>
+          <a href="#productivity-content" class="sec-card-btn">View Tools</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-content" id="productivity-content">
+      <div class="tools-grid">
+        <a href="#" class="tool-card glass-card">
+          <div class="tool-icon purple">💰</div>
+          <div class="tool-name">Auragika Finance</div>
+          <div class="tool-desc">Track expenses, manage budgets, and gain clarity over your shared and personal finances.</div>
+          <span class="tool-badge live">● Live</span>
+        </a>
+        <a href="#" class="tool-card glass-card">
+          <div class="tool-icon cyan">✅</div>
+          <div class="tool-name">Routine &amp; Todo</div>
+          <div class="tool-desc">Daily routines, habit tracking, and todo lists designed for two. Stay in sync.</div>
+          <span class="tool-badge live">● Live</span>
+        </a>
+        <div class="tool-card glass-card">
+          <div class="tool-icon gold">🗺️</div>
+          <div class="tool-name">Travel Planner</div>
+          <div class="tool-desc">Plan itineraries, track bookings, and organise trips from idea to takeoff.</div>
+          <span class="tool-badge coming">Coming Soon</span>
+        </div>
+        <div class="tool-card glass-card">
+          <div class="tool-icon green">📊</div>
+          <div class="tool-name">Goals Dashboard</div>
+          <div class="tool-desc">Set long-term goals, break them into milestones, and celebrate every win together.</div>
+          <span class="tool-badge coming">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       UNIVERSE  ·  card: image RIGHT
+  ═══════════════════════════════════════════ -->
+  <section id="universe">
+    <div class="sec-card-outer">
+      <div class="sec-card sec-card--img-right sec-card--tinted">
+
+        <div class="sec-card-img">
+          <img src="./images/background5.webp" alt="Ruchika and Anurag">
+        </div>
+
+        <div class="sec-card-body">
+          <span class="sec-card-num" aria-hidden="true">04</span>
+          <span class="sec-card-label">04 / 05</span>
+          <span class="section-tag">✦ Universe</span>
+          <h2 class="section-title">The Auragika Story</h2>
+          <p class="section-sub">Born from two names — Ruchika and Anurag. We explore the world, build things, and share everything in between.</p>
+          <a href="#universe-content" class="sec-card-btn">Our Story</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-content" id="universe-content">
+      <div class="universe-profiles">
+        <div class="profile-card glass-card">
+          <div class="profile-avatar-large" style="background:linear-gradient(135deg,#06b6d4,#8b5cf6)">
+            <img src="./images/nova.webp" alt="Ruchika" />
+          </div>
+          <div class="profile-name">Ruchika</div>
+          <div class="profile-title">Creator · Advisor · Dreamer</div>
+          <p class="profile-bio">This is where Ruchika's bio will go. A few sentences about her passions and what she brings to the Auragika universe.</p>
+          <div class="profile-socials">
+            <a href="#" class="social-icon-btn" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"   target="_blank" rel="noopener">▶️</a>
+            <a href="#" class="social-icon-btn" aria-label="Website"   target="_blank" rel="noopener">🌐</a>
+          </div>
+        </div>
+        <div class="profile-card glass-card">
+          <div class="profile-avatar-large">
+            <img src="./images/devon.webp" alt="Anurag" />
+          </div>
+          <div class="profile-name">Anurag</div>
+          <div class="profile-title">Builder · Explorer · Thinker</div>
+          <p class="profile-bio">This is where Anurag's bio will go. A few sentences about who you are, what you do, and what drives you.</p>
+          <div class="profile-socials">
+            <a href="#" class="social-icon-btn" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"   target="_blank" rel="noopener">▶️</a>
+            <a href="#" class="social-icon-btn" aria-label="Website"   target="_blank" rel="noopener">🌐</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       CONNECT  ·  card: image LEFT
+  ═══════════════════════════════════════════ -->
+  <section id="connect">
+    <div class="sec-card-outer">
+      <div class="sec-card">
+
+        <div class="sec-card-img">
+          <img src="./images/background6.webp" alt="Connect with us">
+        </div>
+
+        <div class="sec-card-body">
+          <span class="sec-card-num" aria-hidden="true">05</span>
+          <span class="sec-card-label">05 / 05</span>
+          <span class="section-tag">💬 Connect</span>
+          <h2 class="section-title">Say Hello</h2>
+          <p class="section-sub">We love hearing from you. Reach us anywhere or drop a message directly — we read everything.</p>
+          <a href="#connect-content" class="sec-card-btn">Get in Touch</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-content" id="connect-content">
+      <div class="connect-grid">
+        <div>
+          <div style="margin-bottom:8px;font-size:0.85rem;color:var(--text2);font-weight:500;letter-spacing:0.05em;text-transform:uppercase">Find us on</div>
+          <div class="social-links-list">
+            <a href="#" class="social-link-item glass-card" target="_blank" rel="noopener">
+              <span class="social-link-icon">📸</span>
+              <div>
+                <div class="social-link-name">Instagram</div>
+                <div class="social-link-handle">@auragika</div>
+              </div>
+              <span class="social-link-arrow">→</span>
+            </a>
+            <a href="#" class="social-link-item glass-card" target="_blank" rel="noopener">
+              <span class="social-link-icon">▶️</span>
+              <div>
+                <div class="social-link-name">YouTube</div>
+                <div class="social-link-handle">Auragika Universe</div>
+              </div>
+              <span class="social-link-arrow">→</span>
+            </a>
+            <a href="#" class="social-link-item glass-card" target="_blank" rel="noopener">
+              <span class="social-link-icon">🌐</span>
+              <div>
+                <div class="social-link-name">Website</div>
+                <div class="social-link-handle">auragika.com</div>
+              </div>
+              <span class="social-link-arrow">→</span>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-card glass-card">
+          <div class="form-title">Send a Message</div>
+          <div class="form-sub">We'll get back to you at the earliest.</div>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-name">Your Name</label>
+                <input type="text" id="form-name" name="name" placeholder="Ruchika" required />
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email</label>
+                <input type="email" id="form-email" name="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="form-subject">Subject</label>
+              <input type="text" id="form-subject" name="subject" placeholder="Travel collab? Recipe share? Just saying hi!" />
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" name="message" placeholder="Tell us anything..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="form-submit">Send Message ✦</button>
+          </form>
+          <div class="form-success" id="form-success">✦ Message sent! We'll be in touch soon.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-logo">AU✦</div>
+    <div class="footer-copy">© 2026 {{ .Site.Title }}. Made with ♥ by Ruchika &amp; Anurag.</div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#travel">Travel</a>
+      <a href="#kitchen">Kitchen</a>
+      <a href="#connect">Connect</a>
+    </div>
+  </footer>
+
+  <!-- ══ CHAT FAB ══ -->
+  <button id="chat-fab" aria-label="Send us a message">💬</button>
+
+{{ end }}
