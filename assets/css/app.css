@@ -516,6 +516,7 @@ section{position:relative;z-index:3;background:#fff}
 }
 .tool-card:hover .tool-icon{transform:scale(1.15) rotate(-6deg);box-shadow:0 10px 28px rgba(0,0,0,.10)}
 .tool-icon.purple{background:linear-gradient(135deg,#7c3aed,#5b21b6)}
+.tool-icon.violet{background:linear-gradient(135deg,#a855f7,#7c3aed)}
 .tool-icon.cyan  {background:linear-gradient(135deg,#0891b2,#06b6d4)}
 .tool-icon.gold  {background:linear-gradient(135deg,#d97706,#f59e0b)}
 .tool-icon.green {background:linear-gradient(135deg,#059669,#10b981)}
