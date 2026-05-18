@@ -6,10 +6,6 @@
     <div class="loader-bar"><div class="loader-bar-fill" id="loader-fill"></div></div>
   </div>
 
-  <!-- ══ CURSOR ══ -->
-  <div id="cursor-dot"></div>
-  <div id="cursor-ring"></div>
-
   <!-- ══ NAVBAR ══ -->
   <nav id="navbar">
     <a href="#home" class="nav-logo">AU✦</a>
@@ -22,6 +18,10 @@
       <li><a href="#connect">Connect</a></li>
     </ul>
     <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <span class="toggle-icon icon-sun">☀</span>
+        <span class="toggle-icon icon-moon">◐</span>
+      </button>
       <button id="menu-toggle" aria-label="Open menu">☰</button>
     </div>
   </nav>
@@ -285,36 +285,36 @@
 
     <div class="section-content" id="productivity-content">
       <div class="tools-grid">
-        <a href="#" class="tool-card glass-card">
+        <a href="https://auragikafinance.netlify.app/" class="tool-card glass-card" target="_blank" rel="noopener">
           <div class="tool-icon purple">💰</div>
           <div class="tool-name">Auragika Finance</div>
           <div class="tool-desc">Track expenses, manage budgets, and gain clarity over your shared and personal finances.</div>
           <span class="tool-badge live">● Live</span>
         </a>
-        <a href="#" class="tool-card glass-card">
+        <a href="https://auragikaroutine.netlify.app/" class="tool-card glass-card" target="_blank" rel="noopener">
           <div class="tool-icon cyan">✅</div>
-          <div class="tool-name">Routine &amp; Todo</div>
+          <div class="tool-name">Auragika Routine</div>
           <div class="tool-desc">Daily routines, habit tracking, and todo lists designed for two. Stay in sync.</div>
           <span class="tool-badge live">● Live</span>
         </a>
-        <a href="https://auragikasubtrack.netlify.app" class="tool-card glass-card" target="_blank" rel="noopener">
+        <a href="https://aurgikasubtrack.netlify.app/" class="tool-card glass-card" target="_blank" rel="noopener">
           <div class="tool-icon violet">💳</div>
           <div class="tool-name">Subtrack</div>
           <div class="tool-desc">Track every subscription — monthly burn, renewal alerts, and category insights in one place.</div>
           <span class="tool-badge live">● Live</span>
         </a>
-        <div class="tool-card glass-card">
-          <div class="tool-icon gold">🗺️</div>
-          <div class="tool-name">Travel Planner</div>
-          <div class="tool-desc">Plan itineraries, track bookings, and organise trips from idea to takeoff.</div>
-          <span class="tool-badge coming">Coming Soon</span>
-        </div>
-        <div class="tool-card glass-card">
-          <div class="tool-icon green">📊</div>
-          <div class="tool-name">Goals Dashboard</div>
-          <div class="tool-desc">Set long-term goals, break them into milestones, and celebrate every win together.</div>
-          <span class="tool-badge coming">Coming Soon</span>
-        </div>
+        <a href="https://auragikatimeboxing.netlify.app/" class="tool-card glass-card" target="_blank" rel="noopener">
+          <div class="tool-icon blue">⏱</div>
+          <div class="tool-name">TimeBoxing</div>
+          <div class="tool-desc">Time-block your day intentionally. Focus sessions, deep work, and structured time management.</div>
+          <span class="tool-badge live">● Live</span>
+        </a>
+        <a href="https://auragikagrove.netlify.app/" class="tool-card glass-card" target="_blank" rel="noopener">
+          <div class="tool-icon green">🌿</div>
+          <div class="tool-name">Grove</div>
+          <div class="tool-desc">Your personal wellness companion. Build habits, track mood, and grow together.</div>
+          <span class="tool-badge live">● Live</span>
+        </a>
       </div>
     </div>
   </section>
@@ -354,9 +354,8 @@
           <div class="profile-title">Creator · Advisor · Dreamer</div>
           <p class="profile-bio">This is where Ruchika's bio will go. A few sentences about her passions and what she brings to the Auragika universe.</p>
           <div class="profile-socials">
-            <a href="#" class="social-icon-btn" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
-            <a href="#" class="social-icon-btn" aria-label="YouTube"   target="_blank" rel="noopener">▶️</a>
-            <a href="#" class="social-icon-btn" aria-label="Website"   target="_blank" rel="noopener">🌐</a>
+            <a href="https://www.linkedin.com/in/ruchika-singh-20/" class="social-icon-btn" target="_blank" rel="noopener"><span class="si-icon">💼</span> LinkedIn</a>
+            <a href="https://novaarch.netlify.app/" class="social-icon-btn" target="_blank" rel="noopener"><span class="si-icon">🌐</span> Portfolio</a>
           </div>
         </div>
         <div class="profile-card glass-card">
@@ -367,9 +366,8 @@
           <div class="profile-title">Builder · Explorer · Thinker</div>
           <p class="profile-bio">This is where Anurag's bio will go. A few sentences about who you are, what you do, and what drives you.</p>
           <div class="profile-socials">
-            <a href="#" class="social-icon-btn" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
-            <a href="#" class="social-icon-btn" aria-label="YouTube"   target="_blank" rel="noopener">▶️</a>
-            <a href="#" class="social-icon-btn" aria-label="Website"   target="_blank" rel="noopener">🌐</a>
+            <a href="https://www.linkedin.com/in/anuragkar-16/" class="social-icon-btn" target="_blank" rel="noopener"><span class="si-icon">💼</span> LinkedIn</a>
+            <a href="https://anuragkar.netlify.app/" class="social-icon-btn" target="_blank" rel="noopener"><span class="si-icon">🌐</span> Portfolio</a>
           </div>
         </div>
       </div>
@@ -406,27 +404,35 @@
         <div>
           <div style="margin-bottom:8px;font-size:0.85rem;color:var(--text2);font-weight:500;letter-spacing:0.05em;text-transform:uppercase">Find us on</div>
           <div class="social-links-list">
-            <a href="#" class="social-link-item glass-card" target="_blank" rel="noopener">
-              <span class="social-link-icon">📸</span>
+            <a href="https://www.linkedin.com/in/ruchika-singh-20/" class="social-link-item glass-card" target="_blank" rel="noopener">
+              <span class="social-link-icon">💼</span>
               <div>
-                <div class="social-link-name">Instagram</div>
-                <div class="social-link-handle">@auragika</div>
+                <div class="social-link-name">Ruchika on LinkedIn</div>
+                <div class="social-link-handle">linkedin.com/in/ruchika-singh-20</div>
               </div>
               <span class="social-link-arrow">→</span>
             </a>
-            <a href="#" class="social-link-item glass-card" target="_blank" rel="noopener">
-              <span class="social-link-icon">▶️</span>
-              <div>
-                <div class="social-link-name">YouTube</div>
-                <div class="social-link-handle">Auragika Universe</div>
-              </div>
-              <span class="social-link-arrow">→</span>
-            </a>
-            <a href="#" class="social-link-item glass-card" target="_blank" rel="noopener">
+            <a href="https://novaarch.netlify.app/" class="social-link-item glass-card" target="_blank" rel="noopener">
               <span class="social-link-icon">🌐</span>
               <div>
-                <div class="social-link-name">Website</div>
-                <div class="social-link-handle">auragika.com</div>
+                <div class="social-link-name">Ruchika's Portfolio</div>
+                <div class="social-link-handle">novaarch.netlify.app</div>
+              </div>
+              <span class="social-link-arrow">→</span>
+            </a>
+            <a href="https://www.linkedin.com/in/anuragkar-16/" class="social-link-item glass-card" target="_blank" rel="noopener">
+              <span class="social-link-icon">💼</span>
+              <div>
+                <div class="social-link-name">Anurag on LinkedIn</div>
+                <div class="social-link-handle">linkedin.com/in/anuragkar-16</div>
+              </div>
+              <span class="social-link-arrow">→</span>
+            </a>
+            <a href="https://anuragkar.netlify.app/" class="social-link-item glass-card" target="_blank" rel="noopener">
+              <span class="social-link-icon">🌐</span>
+              <div>
+                <div class="social-link-name">Anurag's Portfolio</div>
+                <div class="social-link-handle">anuragkar.netlify.app</div>
               </div>
               <span class="social-link-arrow">→</span>
             </a>
