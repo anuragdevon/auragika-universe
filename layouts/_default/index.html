@@ -1,4 +1,17 @@
+{{ define "head_extra" }}
+{{- $bg1 := (resources.Get "images/background1.webp").Resize "2400x webp q80" -}}
+<link rel="preload" href="{{ $bg1.RelPermalink }}" as="image" fetchpriority="high">
+{{ end }}
+
 {{ define "main" }}
+{{- $bg1   := (resources.Get "images/background1.webp").Resize "2400x webp q80" -}}
+{{- $bg2   := (resources.Get "images/background2.webp").Resize "1400x webp q80" -}}
+{{- $bg3   := (resources.Get "images/background3.webp").Resize "1400x webp q80" -}}
+{{- $bg4   := (resources.Get "images/background4.webp").Resize "1400x webp q80" -}}
+{{- $bg5   := (resources.Get "images/background5.webp").Resize "1400x webp q80" -}}
+{{- $bg6   := (resources.Get "images/background6.webp").Resize "1400x webp q80" -}}
+{{- $nova  := (resources.Get "images/nova.webp").Resize  "300x webp q85" -}}
+{{- $devon := (resources.Get "images/devon.webp").Resize "300x webp q85" -}}
 
   <!-- ══ LOADER ══ -->
   <div id="loader">
@@ -42,7 +55,7 @@
   ═══════════════════════════════════════════ -->
   <section id="home">
     <div class="hero-bg" aria-hidden="true"
-         style="background-image:url('./images/background1.webp')"></div>
+         style="background-image:url('{{ $bg1.RelPermalink }}')"></div>
 
     <div class="hero-content">
       <div class="hero-label" id="hero-label">✦ &nbsp; Ruchika &amp; Anurag's World &nbsp; ✦</div>
@@ -59,7 +72,7 @@
       <div class="hero-persons" id="hero-persons">
         <div class="person-card glass-card" id="card-ruchika" data-tilt>
           <div class="person-avatar" style="background:linear-gradient(135deg,#06b6d4,#8b5cf6)">
-            <img src="./images/nova.webp" alt="Ruchika" />
+            <img src="{{ $nova.RelPermalink }}" alt="Ruchika" fetchpriority="high">
           </div>
           <div class="person-name">Ruchika</div>
           <div class="person-role">Creator &amp; Advisor</div>
@@ -67,7 +80,7 @@
         <div class="person-connector" aria-hidden="true">✦</div>
         <div class="person-card glass-card" id="card-anurag" data-tilt>
           <div class="person-avatar">
-            <img src="./images/devon.webp" alt="Anurag" />
+            <img src="{{ $devon.RelPermalink }}" alt="Anurag" fetchpriority="high">
           </div>
           <div class="person-name">Anurag</div>
           <div class="person-role">Explorer &amp; Builder</div>
@@ -106,7 +119,7 @@
       <div class="sec-card">
 
         <div class="sec-card-img">
-          <img src="./images/background2.webp" alt="Travel destinations">
+          <img src="{{ $bg2.RelPermalink }}" alt="Travel destinations" loading="lazy">
         </div>
 
         <div class="sec-card-body">
@@ -185,7 +198,7 @@
       <div class="sec-card sec-card--img-right sec-card--tinted">
 
         <div class="sec-card-img">
-          <img src="./images/background3.webp" alt="Culinary adventures">
+          <img src="{{ $bg3.RelPermalink }}" alt="Culinary adventures" loading="lazy">
         </div>
 
         <div class="sec-card-body">
@@ -268,7 +281,7 @@
       <div class="sec-card">
 
         <div class="sec-card-img">
-          <img src="./images/background4.webp" alt="Productivity tools">
+          <img src="{{ $bg4.RelPermalink }}" alt="Productivity tools" loading="lazy">
         </div>
 
         <div class="sec-card-body">
@@ -329,7 +342,7 @@
       <div class="sec-card sec-card--img-right sec-card--tinted">
 
         <div class="sec-card-img">
-          <img src="./images/background5.webp" alt="Ruchika and Anurag">
+          <img src="{{ $bg5.RelPermalink }}" alt="Ruchika and Anurag" loading="lazy">
         </div>
 
         <div class="sec-card-body">
@@ -348,7 +361,7 @@
       <div class="universe-profiles">
         <div class="profile-card glass-card">
           <div class="profile-avatar-large" style="background:linear-gradient(135deg,#06b6d4,#8b5cf6)">
-            <img src="./images/nova.webp" alt="Ruchika" />
+            <img src="{{ $nova.RelPermalink }}" alt="Ruchika" loading="lazy">
           </div>
           <div class="profile-name">Ruchika</div>
           <div class="profile-title">Creator · Advisor · Dreamer</div>
@@ -360,7 +373,7 @@
         </div>
         <div class="profile-card glass-card">
           <div class="profile-avatar-large">
-            <img src="./images/devon.webp" alt="Anurag" />
+            <img src="{{ $devon.RelPermalink }}" alt="Anurag" loading="lazy">
           </div>
           <div class="profile-name">Anurag</div>
           <div class="profile-title">Builder · Explorer · Thinker</div>
@@ -384,7 +397,7 @@
       <div class="sec-card">
 
         <div class="sec-card-img">
-          <img src="./images/background6.webp" alt="Connect with us">
+          <img src="{{ $bg6.RelPermalink }}" alt="Connect with us" loading="lazy">
         </div>
 
         <div class="sec-card-body">

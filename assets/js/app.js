@@ -42,6 +42,7 @@ function initLoader() {
 function initAll() {
   tryRun(initAboutStrip);
   tryRun(initHeroAnimations);
+  tryRun(initHeroParallax);
   tryRun(initNavbar);
   tryRun(initNavActiveState);
   tryRun(initMobileMenu);
@@ -63,10 +64,18 @@ function tryRun(fn) {
 function initAboutStrip() {
   var strip = document.getElementById('about-strip');
   if (!strip) return;
+  var tags = strip.querySelectorAll('.atag');
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         strip.classList.add('revealed');
+        if (typeof gsap !== 'undefined' && tags.length) {
+          gsap.from(tags, {
+            opacity: 0, y: 12, duration: 0.45,
+            stagger: 0.07, ease: 'power2.out', delay: 0.25,
+            clearProps: 'opacity,transform'
+          });
+        }
         io.unobserve(strip);
       }
     });
@@ -95,18 +104,40 @@ function initRevealCards() {
    HERO ANIMATIONS
 ═══════════════════════════════════════════ */
 function initHeroAnimations() {
-  var tl = gsap.timeline({ delay: 0.2 });
-  tl.from('#hero-label',       { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' })
-    .from('.hero-title',       { opacity: 0, y: 40, duration: 1.0, ease: 'power4.out' }, '-=0.3')
-    .from('#hero-sub',         { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out' }, '-=0.4')
-    .from('#hero-persons',     { opacity: 0, y: 30, duration: 0.8, ease: 'back.out(1.4)' }, '-=0.3');
+  if (typeof gsap === 'undefined') return;
+  var tl = gsap.timeline({ delay: 0.25 });
+  tl.from('#hero-label',   { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out' })
+    .from('.hero-title',   { opacity: 0, y: 50, duration: 1.1, ease: 'power4.out' }, '-=0.25')
+    .from('#hero-sub',     { opacity: 0, y: 16, duration: 0.7, ease: 'power3.out' }, '-=0.45')
+    .from('#hero-persons', { opacity: 0, y: 32, duration: 0.9, ease: 'back.out(1.6)', stagger: 0.12 }, '-=0.3')
+    .from('#scroll-indicator', { opacity: 0, y: 10, duration: 0.5, ease: 'power2.out' }, '-=0.2');
+}
+
+/* ══════════════════════════════════════════
+   HERO PARALLAX (GPU-composited via transform)
+═══════════════════════════════════════════ */
+function initHeroParallax() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  var heroBg = document.querySelector('.hero-bg');
+  if (!heroBg) return;
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to(heroBg, {
+    yPercent: -18,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#home',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: 0.6
+    }
+  });
 }
 
 /* ══════════════════════════════════════════
    SECTION CARD ANIMATIONS (ScrollTrigger)
 ═══════════════════════════════════════════ */
 function initSectionCards() {
-  if (typeof ScrollTrigger === 'undefined') return;
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.utils.toArray('.sec-card').forEach(function (card) {
